@@ -25,7 +25,7 @@ struct node
     bool endmark;
     int prefix;
     node* next[27];
-    node()
+    node() // Constructor
     {
         for(int i=0;i<27;i++)
             next[i] = NULL;
@@ -50,7 +50,7 @@ void insert_word(char s[])
 int prefixes(char s[])
 {
     node* curr = root;
-    int last;
+    
     for(int i=0;s[i];i++)
     {
         int id = s[i]-'a';
