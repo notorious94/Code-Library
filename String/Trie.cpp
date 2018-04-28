@@ -47,7 +47,7 @@ void insert_word(char s[])
     }
 }
 
-int prefixes(char s[])
+int prefix_count(char s[])
 {
     node* curr = root;
     
@@ -84,7 +84,7 @@ int main()
         if(q[0]=='a')
             insert_word(s);
         else
-            printf("%d\n",prefixes(s));
+            printf("%d\n",prefix_count(s));
     }
     del(root);
     return 0;
