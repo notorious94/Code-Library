@@ -60,30 +60,30 @@ void sieve(int limit = 32001)
 }
 */
 
-int block;
+int block_size;
 
-class query
+class node
 {
 public:
     int indx,left,right;
-    query(int i,int l,int r)
+    node(int i,int l,int r)
     {
         indx = i;
         left = l;
         right = r;
     }
-    bool operator < (const query &other)    const
+    bool operator < (const node &other)    const
     {
-        if(left/block == (other.left / block))
+        if(left/block_size == (other.left / block_size))
             return right < other.right;
-        return left / block < other.left / block;
+        return left / block_size < other.left / block_size;
     }
 
 };
 
-int A[100005];
-int F[100005];
-int R[100005];
+int Array[100005];
+int Frequency[100005];
+int Result[100005];
 
 int main()
 {
@@ -92,71 +92,73 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int n,q,l,r,t;
-    vector<query>Q;
+    int n,query,left,right,test;
+    vector<node>Query;
 
-    scanf("%d",&t);
+    scanf("%d",&test);
 
-    for(int k=1;k<=t;k++)
+    for(int kase=1;kase<=test;kase++)
     {
-        scanf("%d%d",&n,&q);
+        scanf("%d%d",&n,&query);
 
-        block = sqrt(n);
+        block_size = sqrt(n);
 
         for(int i=0;i<n;i++)
-            scanf("%d",&A[i]);
+            scanf("%d",&Array[i]);
 
-        mem(F,0);
-        Q.clear();
+        mem(Frequency,0);
+        Query.clear();
 
-        for(int i=0;i<q;i++)
+        for(int i=0;i<query;i++)
         {
-            scanf("%d%d",&l,&r);
-            Q.push_back(query(i,l-1,r-1));
+            scanf("%d%d",&left,&right);
+            Query.push_back(node(i,left-1,right-1));
         }
 
-        sort(all(Q));
+        sort(all(Query));
 
-        int s = Q[0].left;
-        int e = Q[0].left;
-        int ans = 1;
-        F[A[s]]++; // Major Point
+        int start = Query[0].left;
+        int end = start;
+        int count = 1;
+        Frequency[Array[start]]++; // Major Point
 
-        for(int i=0;i<q;i++)
+        for(int i=0;i<query;i++)
         {
-            while(s < Q[i].left)
+            while(start < Query[i].left)
             {
-                F[A[s]]--;
-                if(F[A[s]]==0)
-                    ans--;
-                s++;
+                Frequency[Array[start]]--;
+                if(Frequency[Array[start]]==0)
+                    count--;
+                start++;
             }
-            while(s > Q[i].left)
+            while(start > Query[i].left)
             {
-                s--;
-                F[A[s]]++;
-                if(F[A[s]]==1)
-                    ans++;
+                start--;
+                Frequency[Array[start]]++;
+                if(Frequency[Array[start]]==1)
+                    count++;
             }
-            while(e < Q[i].right)
+            while(end < Query[i].right)
             {
-                e++;
-                F[A[e]]++;
-                if(F[A[e]]==1)
-                    ans++;
+                end++;
+                Frequency[Array[end]]++;
+                if(Frequency[Array[end]]==1)
+                    count++;
             }
-            while(e > Q[i].right)
+            while(end > Query[i].right)
             {
-                F[A[e]]--;
-                if(F[A[e]]==0)
-                    ans--;
-                e--;
+                Frequency[Array[end]]--;
+                if(Frequency[Array[end]]==0)
+                    count--;
+                end--;
             }
-            R[Q[i].indx] = ans;
+            Result[Query[i].indx] = count;
         }
-        printf("Case %d:\n",k);
-        for(int i=0;i<q;i++)
-            printf("%d\n",R[i]);
+
+        printf("Case %d:\n",kase);
+        for(int i=0;i<query;i++)
+            printf("%d\n",Result[i]);
+
     }
     return 0;
 }
