@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+#define pii pair<int,int>
+
+using namespace std;
+
+double area(pii A,pii B,pii C)
+{
+    double x1 = A.first,y1 = A.second;
+    double x2 = B.first,y2 = B.second;
+    double x3 = C.first,y3 = C.second;
+    return abs((x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1-y2))/2);
+}
+
+int main()
+{
+    int n,d,q;
+
+    pii A,B,C,D,P;
+
+    cin>>n>>d>>q;
+
+    A.first = 0,A.second = d;
+    B.first = d,B.second = 0;
+    C.first = n,C.second = n-d;
+    D.first = n-d,D.second = n;
+
+    int rect_area = area(A,B,C)+area(A,C,D);
+
+    while(q--)
+    {
+        int x,y;
+
+        cin>>x>>y;
+
+        P.first = x,P.second = y;
+
+        double PAB = area(P,A,B);
+        double PBC = area(P,B,C);
+        double PCD = area(P,C,D);
+        double PDA = area(P,A,D);
+
+        if(PAB+PBC+PCD+PDA==rect_area)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+
+    return 0;
+}
