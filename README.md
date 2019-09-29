@@ -2,7 +2,8 @@
 
 *Prepared by Md. Istiad Hossain*
 
-*[Template](#tmp)
+* [Template](#tmp)
+____
 
 ## <b name="tmp">Template</b>
 
