@@ -45,6 +45,7 @@ using namespace __gnu_pbds;
 #define howMany(v,L,R) (upper_bound(all(v),R)-lower_bound(all(v),L))
 #define pbds_set tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
 #define pbds_multiset tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update>
+#define bs_find(array,value) binary_search(all(array),value)
 
 typedef long long ll;
 typedef unsigned long long ull;
