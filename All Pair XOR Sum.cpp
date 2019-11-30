@@ -25,3 +25,22 @@ int main()
     cout<<ans<<endl;
     return 0;
 }
+/*
+Explanation :  arr[] = { 7, 3, 5 }
+7 = 1 1 1
+3 = 0 1 1
+5 = 1 0 1
+For bit position 0 : 
+Bits with zero = 0
+Bits with one = 3
+Answer = 0 * 3 * 2 ^ 0 = 0
+Similarly, for bit position 1 :
+Bits with zero = 1
+Bits with one = 2
+Answer = 1 * 2 * 2 ^ 1 = 4
+Similarly, for bit position 2 :
+Bits with zero = 1
+Bits with one = 2
+Answer = 1 * 2 * 2 ^ 2 = 8
+ Final answer = 0 + 4 + 8 = 12 
+ */
