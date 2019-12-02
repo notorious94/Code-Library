@@ -1,3 +1,7 @@
+/// Resource -> https://forthright48.com/spoj-lcmsum-lcm-sum/
+/// Do PREFIX DP
+/// Cautious about overflow
+
 #include<bits/stdc++.h>
 using namespace std;
 
