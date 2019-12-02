@@ -6,34 +6,34 @@
 ____
 
 ## <b name="tmp">Template</b>
+...c++
 
-```c++
 #include<bits/stdc++.h>
 #pragma GCC optimize("Ofast")
-#include <ext/pb_ds/assoc_container.hpp> // Common file
-#include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_update
-#include <ext/pb_ds/detail/standard_policies.hpp>
+
 /*
 #pragma warning(disable:4786)
 #pragma warning(disable:4996)
 #pragma GCC optimize ("unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+#include <ext/pb_ds/assoc_container.hpp> // Common file
+#include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_update
+#include <ext/pb_ds/detail/standard_policies.hpp>
+using namespace __gnu_pbds;
 */
 
 using namespace std;
-using namespace __gnu_pbds;
 
 /// M A C R O Starts Here
-#define MAX 200005
 #define MOD 100000007
 #define MOD2 998244353
 #define INF INT_MAX
 #define LINF LLONG_MAX
 #define pi acos(-1.0)
 #define get_stl(s) getline(cin,s)
-#define pii pair<int,int>
-#define pll pair<ll,ll>
-#define pdd pair<double,double>
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define pdd pair<double, double>
 #define mem(name, value) memset(name, value, sizeof(name))
 #define all(name) name.begin(),name.end()
 #define pq_min priority_queue< int, vector<int>, greater<int> >
@@ -43,8 +43,7 @@ using namespace __gnu_pbds;
 #define S second
 #define uniq(v) v.resize(unique(all(v)) - v.begin())
 #define howMany(v,L,R) (upper_bound(all(v),R)-lower_bound(all(v),L))
-#define pbds_set tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
-#define pbds_multiset tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics_node_update>
+#define pbds tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
 #define bs_find(array,value) binary_search(all(array),value)
 
 typedef long long ll;
@@ -132,6 +131,7 @@ void sieve(int limit = 32001)
 
 int main()
 {
+    /// Suck my dick! HACKER -_-
     //freopen("in.txt","r", stdin);
     //freopen("out.txt","w", stdout);
     ios_base::sync_with_stdio(false);
@@ -140,5 +140,6 @@ int main()
 
     return 0;
 }
+
 
 ```
