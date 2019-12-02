@@ -6,7 +6,7 @@
 ____
 
 ## <b name="tmp">Template</b>
-...c++
+```c++
 
 #include<bits/stdc++.h>
 #pragma GCC optimize("Ofast")
