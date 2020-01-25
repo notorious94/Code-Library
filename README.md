@@ -9,6 +9,7 @@ ____
 ```c++
 
 #include<bits/stdc++.h>
+using namespace std;
 #pragma GCC optimize("Ofast")
 
 /*
@@ -20,9 +21,10 @@ ____
 #include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_update
 #include <ext/pb_ds/detail/standard_policies.hpp>
 using namespace __gnu_pbds;
+// less for set and  less_equal  for multiset
+// order_of_key (k) : Number of items strictly smaller than k
+// find_by_order(k) : K-th element in a set (counting from zero) returns iterator
 */
-
-using namespace std;
 
 /// M A C R O Starts Here
 #define MOD 100000007
@@ -45,6 +47,9 @@ using namespace std;
 #define howMany(v,L,R) (upper_bound(all(v),R)-lower_bound(all(v),L))
 #define pbds tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
 #define bs_find(array,value) binary_search(all(array),value)
+#define forn(i,x,n)   for(int i = x ; i <= n ; i++ )
+#define ford(i,x,n)   for(int i = x ; i >= n ; i-- )
+#define pb(x)           push_back(x)
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -74,39 +79,32 @@ void print(const T1& first, const T2&... rest)
 /// Functions Starts here
 
 /// Bit-masking
-int reset(int N,int pos){return N= N & ~(1<<pos);}
+/*
+ll setBit(ll N,ll pos) {return N = N|(1<<pos)};
+ll reset(ll N,ll pos){return N = N & ~(1<<pos);}
 bool check(ll N,ll pos){return (bool)(N & ((ll)1<<pos));}
-
-bool isPal(string s)
-{
-    int half = s.size()/2;
-    for(int i=0,j=s.size()-1;i<half;i++,j--)
-        if(s[i]!=s[j])  return false;
-    return true;
-}
-
-double _distance(double x1,double y1,double x2,double y2)
-{
-    double x1x2 = x1 - x2;
-    double y1y2 = y1 - y2;
-    return sqrt((x1x2*x1x2)+(y1y2*y1y2));
-}
+*/
 
 bool inBound(int x,int y,int r,int c)
 {
     return (x>=0&&x<r&&y>=0&&y<c);
 }
 
-ll mulmod(ll a, ll b, ll c)
+ll mulMod(ll a,ll b,ll M)
 {
-    ll x = 0, y = a % c;
-    while (b > 0)
+    return ((((a%M)*(b%M))%M)+M)%M;
+}
+
+ll bigMod(ll n,ll p,ll M)
+{
+    if(!p)  return 1%M;
+    if(p&1)
+        return (bigMod(n,p-1,M)%M*(n%M))%M;
+    else
     {
-        if (b&1) x = (x + y) % c;
-        y = (y << 1) % c;
-        b >>= 1;
+        ll r =bigMod(n,p/2,M)%M;
+        return (((r*r)%M)+M)%M;
     }
-    return x % c;
 }
 
 /*
@@ -136,10 +134,9 @@ int main()
     //freopen("out.txt","w", stdout);
     ios_base::sync_with_stdio(false);
     cin.tie(NULL),cout.tie(NULL);
-
+    cout<<setprecision(10)<<fixed;
 
     return 0;
 }
-
 
 ```
