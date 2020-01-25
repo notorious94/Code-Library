@@ -41,8 +41,9 @@ using namespace __gnu_pbds;
 #define pq_min priority_queue< int, vector<int>, greater<int> >
 #define dbg(args...)    do { cerr << #args << ' ' ; print(args); } while(0); cerr << endl;
 #define edge_pair pair<ll,pll>
-#define F first
-#define S second
+#define D(x)        	cerr << __LINE__ << ": " #x " = " << (x) << '\n'
+#define DD(x, y)        cerr << __LINE__ << ": " #x " = " << (x) << ", " #y " = " << (y) << '\n'
+#define DDD(x, y, z)    cerr << __LINE__ << ": " #x " = " << (x) << ", " #y " = " << (y) << ",  " #z " = " << (z) << '\n'
 #define uniq(v) v.resize(unique(all(v)) - v.begin())
 #define howMany(v,L,R) (upper_bound(all(v),R)-lower_bound(all(v),L))
 #define pbds tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
@@ -50,6 +51,8 @@ using namespace __gnu_pbds;
 #define forn(i,x,n)   for(int i = x ; i <= n ; i++ )
 #define ford(i,x,n)   for(int i = x ; i >= n ; i-- )
 #define pb(x)           push_back(x)
+#define F first
+#define S second
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -84,6 +87,9 @@ ll setBit(ll N,ll pos) {return N = N|(1<<pos)};
 ll reset(ll N,ll pos){return N = N & ~(1<<pos);}
 bool check(ll N,ll pos){return (bool)(N & ((ll)1<<pos));}
 */
+
+int toInt(string s)  { int sm; stringstream ss(s); ss>>sm; return sm; }
+ll toLlint(string s) { long long int sm; stringstream ss(s); ss>>sm; return sm;}
 
 bool inBound(int x,int y,int r,int c)
 {
