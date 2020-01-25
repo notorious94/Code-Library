@@ -7,7 +7,6 @@ ____
 
 ## <b name="tmp">Template</b>
 ```c++
-
 #include<bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("Ofast")
@@ -27,32 +26,32 @@ using namespace __gnu_pbds;
 */
 
 /// M A C R O Starts Here
-#define MOD 100000007
-#define MOD2 998244353
-#define INF INT_MAX
-#define LINF LLONG_MAX
-#define pi acos(-1.0)
-#define get_stl(s) getline(cin,s)
-#define pii pair<int, int>
-#define pll pair<ll, ll>
-#define pdd pair<double, double>
-#define mem(name, value) memset(name, value, sizeof(name))
-#define all(name) name.begin(),name.end()
-#define pq_min priority_queue< int, vector<int>, greater<int> >
-#define dbg(args...)    do { cerr << #args << ' ' ; print(args); } while(0); cerr << endl;
-#define edge_pair pair<ll,pll>
-#define D(x)        	cerr << __LINE__ << ": " #x " = " << (x) << '\n'
-#define DD(x, y)        cerr << __LINE__ << ": " #x " = " << (x) << ", " #y " = " << (y) << '\n'
-#define DDD(x, y, z)    cerr << __LINE__ << ": " #x " = " << (x) << ", " #y " = " << (y) << ",  " #z " = " << (z) << '\n'
-#define uniq(v) v.resize(unique(all(v)) - v.begin())
-#define howMany(v,L,R) (upper_bound(all(v),R)-lower_bound(all(v),L))
-#define pbds tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
+#define MOD                  100000007
+#define MOD2                 998244353
+#define INF                  INT_MAX
+#define LINF                 LLONG_MAX
+#define pi                   acos(-1.0)
+#define get_stl(s)           getline(cin,s)
+#define pii                  pair<int, int>
+#define pll                  pair<ll, ll>
+#define pdd                  pair<double, double>
+#define mem(name, value)     memset(name, value, sizeof(name))
+#define all(name)            name.begin(),name.end()
+#define pq_min               priority_queue< int, vector<int>, greater<int> >
+#define dbg(args...)         do { cerr << #args << ' ' ; print(args); } while(0); cerr << endl;
+#define edge_pair            pair<ll,pll>
+#define D(x)        	     cerr << __LINE__ << ": " #x " = " << (x) << '\n'
+#define DD(x, y)             cerr << __LINE__ << ": " #x " = " << (x) << ", " #y " = " << (y) << '\n'
+#define DDD(x, y, z)         cerr << __LINE__ << ": " #x " = " << (x) << ", " #y " = " << (y) << ",  " #z " = " << (z) << '\n'
+#define uniq(v)              v.resize(unique(all(v)) - v.begin())
+#define howMany(v,L,R)       upper_bound(all(v),R)-lower_bound(all(v),L)
 #define bs_find(array,value) binary_search(all(array),value)
-#define forn(i,x,n)   for(int i = x ; i <= n ; i++ )
-#define ford(i,x,n)   for(int i = x ; i >= n ; i-- )
-#define pb(x)           push_back(x)
-#define F first
-#define S second
+#define forn(i,x,n)          for(int i = x ; i <= n ; i++ )
+#define ford(i,x,n)          for(int i = x ; i >= n ; i-- )
+#define pb(x)                push_back(x)
+#define F                    first
+#define S                    second
+#define pbds                 tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
 
 typedef long long ll;
 typedef unsigned long long ull;
